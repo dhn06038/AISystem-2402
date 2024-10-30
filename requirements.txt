@@ -1,0 +1,8 @@
+torch
+torchvision
+torchaudio
+Pillow
+matplotlib
+tqdm
+dataclasses
+openai-clip
