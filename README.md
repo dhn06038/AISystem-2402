@@ -18,30 +18,33 @@ AISystem-2402
 ```
 └──── ./train
     ├──── {class_name}/
-    |   ├──── 000.jpg
+    |   ├──── 0000.jpg
     |   ├──── ...
-    |   └──── 000.jpg
+    |   └──── 0000.jpg
     ├──── {class_name}/
-    |   ├──── 000.jpg
+    |   ├──── 0000.jpg
     |   ├──── ...
-    |   └──── 000.jpg
+    |   └──── 0000.jpg
 ```
 
 **Test (Validation) Dataset**
 ```
 └──── ./test
     ├──── anomaly/
-    |   ├──── 000.jpg
+    |   ├──── 0000.jpg
     |   ├──── ...
-    |   └──── 000.jpg
+    |   └──── 0000.jpg
     ├──── normal/
-    |   ├──── 000.jpg
+    |   ├──── 0000.jpg
     |   ├──── ...
-    |   └──── 000.jpg
+    |   └──── 0000.jpg
     
 ```
 
 The dataset for anomaly detection is organized to facilitate both few-shot and zero-shot approaches with CLIP embeddings.
+
+### Dataset Download
+ Dataset can be downloaded [here](https://drive.google.com/file/d/1jOXzkmMIkYCCvC50J26V6mXn7wEYYpxP/view?usp=drive_link).
 
 ### Dataset Organization
 **Train Dataset**: This dataset provides 5 `normal` images per each of the 16 classes. You may use or manipulate this dataset to apply few-shot or zero-shot strategies.
@@ -50,8 +53,13 @@ The dataset for anomaly detection is organized to facilitate both few-shot and z
 
 **Test Dataset**: Since test dataset is private, there is **no** separate test dataset provided for this project. 
 
-> Each class within the anomaly dataset contains at least one example of an anomaly, such as dots, cuts, or other class-specific defects. This design encourages exploration of anomaly detection within constrained data conditions.
+> Each class within the anomaly dataset contains at least one example of an anomaly, such as dots, cuts, or other class-specific defects like below. This design encourages exploration of anomaly detection within constrained data conditions.
 
+
+<p align="center">
+  <img src="docs/0001.jpg" width="45%" alt="Image 1">
+  <img src="docs/0002.jpg" width="45%" alt="Image 2">
+</p>
 ## Getting Started
 
 1. Clone the Repository
