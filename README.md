@@ -44,7 +44,7 @@ AISystem-2402
 The dataset for anomaly detection is organized to facilitate both few-shot and zero-shot approaches with CLIP embeddings.
 
 ### Dataset Download
- Dataset can be downloaded [here](https://drive.google.com/file/d/1jOXzkmMIkYCCvC50J26V6mXn7wEYYpxP/view?usp=drive_link).
+ Dataset can be downloaded [here](https://drive.google.com/file/d/1Bsow_HvXI3H3kA2x6dUomSoNrYctc2ef/view?usp=sharing).(Last updated on November 24, 2024)
 
 ### Dataset Organization
 **For Preliminary Competition (for personal practice)**
@@ -63,6 +63,7 @@ The dataset for anomaly detection is organized to facilitate both few-shot and z
   <img src="docs/0001.jpg" width="45%" alt="Image 1">
   <img src="docs/0002.jpg" width="45%" alt="Image 2">
 </p>
+
 ## Getting Started
 
 1. Clone the Repository
