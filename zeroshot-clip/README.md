@@ -1,4 +1,4 @@
-# fewshot-clip
+# ZeroShot-Clip
 
 This project implements an anomaly detection system using a CLIP-based classifier. The model is trained to classify images as either "normal" or "anomaly" based on their visual features.
 
