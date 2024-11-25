@@ -1,4 +1,4 @@
-# AISystem-2402
+# AISystem-FinalProject-2402
 
 This repository provides implementations of both few-shot and zero-shot anomaly detection using CLIP embeddings.
 
@@ -44,14 +44,10 @@ AISystem-2402
 The dataset for anomaly detection is organized to facilitate both few-shot and zero-shot approaches with CLIP embeddings.
 
 ### Dataset Download
- Dataset can be downloaded [here](https://drive.google.com/file/d/1Bsow_HvXI3H3kA2x6dUomSoNrYctc2ef/view?usp=sharing).(Last updated on November 24, 2024)
+ Dataset can be downloaded [here](https://drive.google.com/file/d/1jdBVI93zKGfryAJ7FqUnl9z6n3n3Dgk9/view?usp=sharing).
 
 ### Dataset Organization
-**For Preliminary Competition (for personal practice)**
-- **Training Data**: 6 classes, 5 `normal` images per class.
-- **Validation Data**: 6 classes, 200 `anomaly` and 200 `normal` images for each class.
-
-**For Main Competition (for project)**
+**For Final Project**
 - **Training Data**: 10 classes (excluding the 6 classes from the preliminary competition), 5 normal images per class.
 - **Validation Data**: No validation dataset will be given.
 
@@ -60,8 +56,8 @@ The dataset for anomaly detection is organized to facilitate both few-shot and z
 
 
 <p align="center">
-  <img src="docs/0001.jpg" width="45%" alt="Image 1">
-  <img src="docs/0002.jpg" width="45%" alt="Image 2">
+  <img src="../docs/0001.jpg" width="45%" alt="Image 1">
+  <img src="../docs/0002.jpg" width="45%" alt="Image 2">
 </p>
 
 ## Getting Started
@@ -108,27 +104,88 @@ To run the sample code for Zero-Shot CLIP Embedding, execute:
 python zeroshot-clip/main.py
 ```
 
+## Getting started with Docker
+### Install Docker
+Download and install Docker Desktop from the [Docker official Website](https://www.docker.com/products/docker-desktop/).
+
+### Building the Docker Image
+Use the following Dockerfile as a reference to ensure compatibility with the evaluation environment.
+```Dockerfile
+FROM python:3.10-slim
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy requirements file and install dependencies
+COPY requirements.txt /workspace/
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy project files
+COPY . /workspace/
+```
+
+### Test the Docker Environment Locally
+Before submission, students must test their code in the provided Docker environment to ensure it works correctly.
+
+1. Build the Docker Image.
+    ```bash
+    docker build -t <name> .
+    ```
+
+2. Run Docker Container.
+    ```
+    docker run --rm -it \
+        <name> \
+        python main.py \ 
+        --output_dir /workspace/results
+    ```
+
+## Submission Guidelines
+
+### Required Files
+Students must submit the Docker image with the followings:
+1. Trained model file(best_model.pth) if using Few-Shot CLIP.
+2. Inference script or any other files required for evaluation.
+3. A requirements.txt file listing any additional Python dependencies.
+
+#### Docker image Submission Format
+```
+submission_{student_number}.tar
+├── model.pth (Few-Shot only)
+├── main.py (or any other files required for evaluation)
+└── requirements.txt
+```
+#### Save Docker image
+```
+docker save -o <submission_{student_number}>.tar
+```
+
+### Submissions details
+#### Option 1: Github Pull Request
+
+#### Option 2: Email
+If you are unable to use Github Pull Request, you may submit your files via email  [leessoit@gmail.com](mailto:leessoit@gmail.com).
+
+### Leaderboard Updates
+The leaderboard will be updated once daily at midnight based on the lasted evaluations.
+
 ## Performance Summary
 The Performance of sample codes is shown in the tables below.
 
 
 ## Few-Shot CLIP
-
 | Metric                    | Value                  |
 |---------------------------|------------------------|
-| **Train Loss (Epoch 1)**  | 0.7279                 |
-| **Train Accuracy (Epoch 1)** | 52.86%            |
-| **Test Accuracy (Epoch 1)**  | 63.08%            |
-| **Best Model Path**       | `saved_models/best_model.pth` (Accuracy: 63.08%) |
-| **Overall Test Accuracy** | 32.31%                |
-| **Total Time Taken**      | 18.42 seconds         |
-| **Average Time per Image** | 0.2834 seconds       |
+| **Overall Test Accuracy** | 50.00%                |
+| **Total Time Taken**      | 2152.34 seconds         |
+| **Average Time per Image** | 0.5381 seconds       |
 
 #### Inference Details
 | Class   | Correct | Total | Accuracy | Normal Similarity | Anomaly Similarity |
 |---------|---------|-------|----------|-------------------|--------------------|
-| Normal  | 21      | 21    | 100.00%  | -                | -                 |
-| Anomaly | 0       | 44    | 0.00%    | -                | -                 |
+| Normal  | 2000      | 2000    | 100.00%  | -                | -                 |
+| Anomaly | 0       | 2000    | 0.00%    | -                | -                 |
 
 ---
 
@@ -136,33 +193,44 @@ The Performance of sample codes is shown in the tables below.
 
 | Metric                       | Value                  |
 |------------------------------|------------------------|
-| **Total Images**             | 65                     |
-| **Correct Predictions**      | 35                     |
-| **Overall Accuracy**         | 53.85%                 |
+| **Total Images**             | 4000                     |
+| **Correct Predictions**      | 2026                     |
+| **Overall Accuracy**         | 50.65%                 |
 
 #### Class-Specific Performance
 
 | Class     | Total | Correct | Incorrect | Accuracy | Avg Anomaly Score | Avg Normal Similarity | Avg Anomaly Similarity |
 |-----------|-------|---------|-----------|----------|-------------------|-----------------------|------------------------|
-| **Normal** | 21    | 21      | 0         | 100.00%  | 0.288            | 0.921                 | 0.634                  |
-| **Anomaly** | 44    | 14      | 30        | 31.82%   | 0.234            | 0.862                 | 0.627                  |
+| **Normal** | 2000    | 1364      | 636         | 68.20%  | 0.223            | 0.899                 | 0.676                  |
+| **Anomaly** | 2000    | 662      | 1338        | 33.10%   | 0.230            | 0.878                 | 0.648                  |
 
-#### Detailed Metrics
-
-| Metric      | Value     |
-|-------------|-----------|
-| **Precision** | 100.00% |
-| **Recall**    | 31.82%  |
-| **F1 Score**  | 48.28%  |
 
 *Metrics saved in `./results/metrics_{datetime}_{time}.json`. Results can be found in the `./results` directory.*
+
+
+## Leaderboard
+
+The leaderboard is updated **daily at midnight (00:00 KST)**.  
+Ensure your submissions are finalized by **23:59 KST** to be included in the next update.
+
+### Few-Shot CLIP
+TBU
+
+### Zero-Shot CLIP
+
+| Rank |  Name       | Submission Count | Overall Score | Precision | Recall | F1 Score |
+|------|-----------------|------------------|---------------|-----------|--------|----------|
+| 1    | Baseline Model      | 1                | 50.65%        | 51.00%    | 33.10% | 40.15%   |
+
+
+
 
 ## Further Information
 For additional details on each module, check out the specific README files:
 
-- [Few-Shot CLIP](./fewshot-clip/README.md) 
+- [Few-Shot CLIP](../fewshot-clip/README.md) 
 
-- [Zero-Shot CLIP](./zeroshot-clip/README.md)
+- [Zero-Shot CLIP](../zeroshot-clip/README.md)
 
 ## License
 
