@@ -162,10 +162,7 @@ docker save -o <submission_{student_number}>.tar
 ```
 
 ### Submissions details
-#### Option 1: Github Pull Request
-
-#### Option 2: Email
-If you are unable to use Github Pull Request, you may submit your files via email  [leessoit@gmail.com](mailto:leessoit@gmail.com).
+#### Github Pull Request
 
 ### Leaderboard Updates
 The leaderboard will be updated once daily at midnight based on the lasted evaluations.
