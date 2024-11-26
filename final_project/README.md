@@ -213,10 +213,6 @@ The Performance of sample codes is shown in the tables below.
 The leaderboard is updated **daily at midnight (00:00 KST)**.  
 Ensure your submissions are finalized by **23:59 KST** to be included in the next update.
 
-### Few-Shot CLIP
-TBU
-
-### Zero-Shot CLIP
 
 | Rank |  Name       | Submission Count | Overall Score | Precision | Recall | F1 Score |
 |------|-----------------|------------------|---------------|-----------|--------|----------|
