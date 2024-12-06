@@ -211,9 +211,11 @@ The leaderboard is updated **daily at midnight (00:00 KST)**.
 Ensure your submissions are finalized by **23:59 KST** to be included in the next update.
 
 
-| Rank |  Name       | Submission Count | Overall Score | Precision | Recall | F1 Score |
-|------|-----------------|------------------|---------------|-----------|--------|----------|
-| 1    | Baseline Model      | 1                | 50.65%        | 51.00%    | 33.10% | 40.15%   |
+| Rank | Name             | Overall Score | Submission Count | Submission Date     |
+|------|------------------|---------------|------------------|---------------------|
+| 1    | zxcv3296    | 60.32%        | 1                | 2024-12-06 12:09 |
+| 2    | Baseline Model   | 50.65%        | 1                | - |
+
 
 
 
