@@ -214,7 +214,9 @@ Ensure your submissions are finalized by **23:59 KST** to be included in the nex
 | Rank | Name             | Overall Score | Submission Count | Submission Date     |
 |------|------------------|---------------|------------------|---------------------|
 | 1    | zxcv3296    | 60.32%        | 1                | 2024-12-06 12:09 |
-| 2    | Baseline Model   | 50.65%        | 1                | - |
+| 2    | burugi  | 52.18%      | 1                | 2024-12-12 20:07  |
+| 3    | **Baseline Model 1**  | **50.65%**      | 1                | - |
+| 4   | vavarier   | 50.18%        | 1                | 2024-12-12 14:33 |
 
 
 
