@@ -224,6 +224,7 @@ Ensure your submissions are finalized by **23:59 KST** to be included in the nex
 | 9    | **Baseline Model 1**  | **50.65%**      | 1                | - |
 | 10   | malinakmichal   |  50.42%        | 2                | 2024-12-16 21:45 |
 | 11   | vavarier   | 50.18%        | 1                | 2024-12-12 14:33 |
+| 12   | Artyste8038-fr   | 49.85%        | 1                | 2024-12-17 19:15 |
 
 
 
