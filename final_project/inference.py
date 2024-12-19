@@ -2,7 +2,7 @@ import torch
 import time
 import os
 
-from model import load_clip_model
+from model import EnsembleCLIPClassifier
 from data_loader import CustomDataset
 from torchvision import transforms
 from collections import defaultdict
@@ -29,7 +29,7 @@ def inference(image_dir, model_path, device):
     anomaly_loader = torch.utils.data.DataLoader(anomaly_dataset, batch_size=1, shuffle=False)
 
     # Load pre-trained CLIP model and set it to evaluation mode
-    model = load_clip_model(device)
+    model = EnsembleCLIPClassifier(num_models=3, device=device)
     model.load_state_dict(torch.load(model_path))
     model.eval()
 
